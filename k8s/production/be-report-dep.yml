@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: be-report
+  labels:
+    app: be-report
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: be-report
+  template:
+    metadata:
+      labels:
+        app: be-report
+    spec:
+      containers:
+        - name: be-report
+          image: cloud-container-registry-container-path-placeholder-for-jenkins
+          ports:
+            - name: http
+              containerPort: 8112

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: be-report
+spec:
+  selector:
+    app: be-report
+  ports:
+    - protocol: TCP
+      port: 8112
+      targetPort: http
